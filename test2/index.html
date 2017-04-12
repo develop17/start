@@ -1,0 +1,72 @@
+<html   lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Jquery Fundamentals</title>
+        <meta name="description" content="Jquery Fundamentals">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" >
+		$(document).ready(function(){
+			var divs=$('div');
+			//alert(divs.length);
+			$('div').css('background-color','green');
+			$('div').each(function(){
+				//alert($(this).html());
+			});
+			var coll=$('div,p');
+			//alert(coll.length);
+			
+			//$('#testid').html();
+			$('.mc').css('border','2px solid blue');
+			//alert($('div[title]').length);
+			
+			$('#testid').append('<span>añado</span>');
+			$('#testid').prepend('<span style="background-color:yellow">añado</span>');
+			$('<span>frase 3</span>').appendTo('#testid');
+			$('<span>frase 4</span>').prependTo('#testid');
+			
+			//var test= $(#testid); test.append
+			
+			$('span.Foo').wrap('<div class="borrar">');
+			$('div.borrar').each(function(){
+			alert($(this).html());
+			});
+			
+			$('div.footer1,div.footer2')
+			.attr({
+			title:'titulo añadido'
+			})
+			.css({
+			'background-color': 'black',
+			'color':'red'
+			});
+			
+			
+		});
+  		</script>
+    </head>
+    <body>
+	<span class="Foo">
+	texto de prueba
+	</span><br>
+	<div id="testid" title="div1"> test id #</div><br>
+        <img src="http://www.amaris.com/Sitefinity/WebsiteTemplates/AmarisWebsiteTemplate/App_Themes/AmarisWebsite/imgs/logo.png">
+		<div id="myContent">
+        <p> header</p>
+		</div>
+		<div id="mc" title="div2">
+        contenido del cuerpo
+		</div>
+		<div id="footer" title="div3">
+        <p> pie de página</p>
+		</div>
+		
+		<div class="footer1" title="div3">
+        <p> pie de página</p>
+		</div>
+		
+		<div class="footer2" title="div3">
+        <p> pie de página</p>
+		</div>
+    </body>
+	
+</html>
